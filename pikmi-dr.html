@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ПИКМИ ДР</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom right, #ffe6f0, #ffd9ec);
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      color: #b30059;
+      background-image: url('https://i.imgur.com/F3UZZf8.png'); /* нежные сердечки и звезды */
+      background-repeat: repeat;
+    }
+
+    .container {
+      background-color: rgba(255, 255, 255, 0.85);
+      border: 4px dashed #ff99cc;
+      border-radius: 25px;
+      padding: 40px 30px;
+      max-width: 600px;
+      text-align: center;
+      box-shadow: 0 0 25px #ffb6d9;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+      color: #ff3399;
+      text-shadow: 1px 1px #ffe0f0;
+    }
+
+    p {
+      font-size: 1.3em;
+      line-height: 1.6;
+    }
+
+    .emoji {
+      font-size: 1.5em;
+      margin: 10px 0;
+    }
+
+    .poll {
+      margin-top: 30px;
+    }
+
+    .poll button {
+      background-color: #ffccf2;
+      border: none;
+      border-radius: 20px;
+      padding: 12px 24px;
+      margin: 10px;
+      font-size: 1.1em;
+      color: #b30059;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+
+    .poll button:hover {
+      background-color: #ffe0f7;
+      transform: scale(1.05);
+    }
+
+    .thanks {
+      margin-top: 20px;
+      font-weight: bold;
+      color: #cc0066;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>💖 ПИКМИ ДР 💫</h1>
+    <p class="emoji">✨💖🌟💫💗</p>
+    <p>
+      Дорогая пикмуша,<br />
+      приглашаю тебя на мой день рождения,<br />
+      который состоится <strong>12 июня в 17:00</strong><br />
+      на базе отдыха «Река», <strong>11 домик</strong>.
+    </p>
+    <p><strong>Кто не придет, тот скуф 😤</strong></p>
+    <div class="poll">
+      <p>Ты придёшь? 💭</p>
+      <button onclick="vote('Приду')">Приду 🎉</button>
+      <button onclick="vote('Не приду')">Не приду 😢</button>
+      <div class="thanks" id="thanksMessage"></div>
+    </div>
+  </div>
+
+  <script>
+    function vote(choice) {
+      const message = choice === 'Приду'
+        ? 'Ура! Жду тебя! 💕'
+        : 'Эх... грустно! 😭';
+      document.getElementById('thanksMessage').innerText = message;
+    }
+  </script>
+</body>
+</html>
